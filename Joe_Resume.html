@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joe - Full-Stack Developer Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.5; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    .download-btn { 
+      position: fixed; 
+      top: 20px; 
+      right: 20px; 
+      background: #6366f1; 
+      color: white; 
+      padding: 12px 24px; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      font-size: 14px; 
+      font-weight: 600; 
+      box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 1000;
+    }
+    .download-btn:hover { 
+      background: #4f46e5; 
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(99, 102, 241, 0.4);
+    }
+    .download-icon {
+      width: 16px;
+      height: 16px;
+    }
+    @media print {
+      .download-btn { display: none; }
+    }
+    @media (max-width: 640px) {
+      .download-btn {
+        position: static;
+        margin-bottom: 20px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    h1 { font-size: 28px; color: #1a1a2e; margin-bottom: 5px; }
+    h2 { font-size: 16px; color: #6366f1; border-bottom: 2px solid #6366f1; padding-bottom: 5px; margin: 25px 0 15px; text-transform: uppercase; letter-spacing: 1px; }
+    h3 { font-size: 15px; color: #1a1a2e; margin-bottom: 5px; }
+    .subtitle { color: #666; font-size: 14px; margin-bottom: 10px; }
+    .contact { font-size: 13px; color: #555; margin-bottom: 20px; }
+    .contact a { color: #6366f1; text-decoration: none; }
+    .summary { font-size: 14px; color: #444; margin-bottom: 20px; }
+    .project { margin-bottom: 20px; }
+    .project-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .project-type { font-size: 12px; color: #6366f1; background: #f0f0ff; padding: 2px 8px; border-radius: 4px; }
+    .project-desc { font-size: 13px; color: #555; margin: 8px 0; }
+    .tech-list { font-size: 12px; color: #666; }
+    .metrics { font-size: 12px; color: #888; margin-top: 5px; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .skill-category h4 { font-size: 13px; color: #6366f1; margin-bottom: 8px; }
+    .skill-list { font-size: 12px; color: #555; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 3px; font-size: 13px; }
+  </style>
+  <script>
+    function downloadPDF() {
+      window.print();
+    }
+  </script>
+</head>
+<body>
+  <a href="#" onclick="downloadPDF(); return false;" class="download-btn">
+    <svg class="download-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    Download PDF
+  </a>
+  <header>
+    <h1>Joe</h1>
+    <p class="subtitle">Full-Stack Developer | AI Integration Specialist</p>
+    <p class="contact">
+      <a href="mailto:alvesoscar517@gmail.com">alvesoscar517@gmail.com</a> • 
+      <a href="https://github.com/alvesoscar517-cloud">GitHub</a> • 
+      Available for Freelance
+    </p>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p class="summary">
+      Full-stack developer with 3+ years of experience building production-ready web applications. 
+      Specialized in React ecosystem, Chrome Extension development (Manifest V3), and AI integration 
+      using Google Vertex AI/Gemini. Proven track record delivering complex applications with 
+      offline-first architecture, real-time collaboration, and exceptional user experiences. 
+      100,000+ lines of production code across 10+ projects.
+    </p>
+  </section>
+
+  <section>
+    <h2>Featured Projects</h2>
+    
+    <div class="project">
+      <div class="project-header">
+        <h3>G-Note - Note Taking App</h3>
+        <span class="project-type">PWA + Chrome Extension</span>
+      </div>
+      <p class="project-desc">
+        Modern offline-first note-taking application with Google Drive sync, real-time P2P collaboration 
+        via WebRTC/Yjs, and AI writing assistance. Features rich text editing with TipTap, 
+        CRDT-based conflict-free editing, and support for 19 languages.
+      </p>
+      <p class="tech-list"><strong>Tech:</strong> React 19, TypeScript, Vite, Tailwind CSS, Zustand, TipTap, Yjs, Dexie (IndexedDB), Node.js, Express, Firestore, Vertex AI, WebRTC</p>
+      <p class="metrics">25,000+ lines of code • 50+ React components • 19 languages</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>Graphos AI Studio</h3>
+        <span class="project-type">Chrome Extension + Web App</span>
+      </div>
+      <p class="project-desc">
+        AI content detection and humanization platform. Detects AI-generated text with multi-pass analysis, 
+        rewrites content to sound natural, and matches user's voice profile. Includes admin dashboard 
+        with analytics and credit-based payment system via LemonSqueezy.
+      </p>
+      <p class="tech-list"><strong>Tech:</strong> React 18, TypeScript, Vite, Tailwind CSS, Zustand, TanStack Query, TipTap, Node.js, Express, Firestore, Redis, BullMQ, Vertex AI</p>
+      <p class="metrics">60,000+ lines of code • 150+ React components • 40+ API endpoints</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>LocalizeAI</h3>
+        <span class="project-type">Chrome Extension + API</span>
+      </div>
+      <p class="project-desc">
+        AI-powered localization testing tool for developers and QA testers. Features live language toggle 
+        on any website, pseudo-localization for UI testing, bug reporting with screenshots, 
+        and batch JSON file translation supporting 100+ languages.
+      </p>
+      <p class="tech-list"><strong>Tech:</strong> Vanilla JavaScript (ES6+), Chrome Extension Manifest V3, IndexedDB, Node.js, Express, Firestore, Vertex AI, Google Drive API</p>
+      <p class="metrics">15,000+ lines of code • 100+ supported languages • 90+ locale translations</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h4>Frontend</h4>
+        <p class="skill-list">React 18/19, Next.js, TypeScript, Tailwind CSS, Framer Motion, TipTap/ProseMirror, Zustand, Redux, TanStack Query</p>
+      </div>
+      <div class="skill-category">
+        <h4>Backend</h4>
+        <p class="skill-list">Node.js, Express, Firebase/Firestore, PostgreSQL, MongoDB, Redis, WebSocket, REST API Design</p>
+      </div>
+      <div class="skill-category">
+        <h4>Cloud & DevOps</h4>
+        <p class="skill-list">Google Cloud Platform, Docker, CI/CD, Vercel, Firebase Hosting</p>
+      </div>
+      <div class="skill-category">
+        <h4>Specialized</h4>
+        <p class="skill-list">Chrome Extension (Manifest V3), PWA Development, AI Integration (Gemini/Vertex AI), Real-time Collaboration (Yjs/WebRTC), i18n/l10n</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Achievements</h2>
+    <ul>
+      <li>Built offline-first PWA with CRDT-based real-time collaboration serving users across 19 languages</li>
+      <li>Developed AI content detection system with multi-pass analysis achieving high accuracy</li>
+      <li>Implemented circuit breaker pattern and multi-layer caching (Redis + LRU) for resilient AI integrations</li>
+      <li>Created Chrome Extensions with Manifest V3, handling complex OAuth flows and background service workers</li>
+      <li>Designed tombstone-based sync system for conflict-free data synchronization with Google Drive</li>
+    </ul>
+  </section>
+</body>
+</html>
