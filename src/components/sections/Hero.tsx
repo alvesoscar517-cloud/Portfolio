@@ -50,14 +50,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center gap-3 mb-12"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8 sm:mb-12 px-4 sm:px-0"
           >
-            <Button variant="primary" size="lg" onClick={scrollToProjects} className="flex flex-row items-center gap-2">
+            <Button variant="primary" size="lg" onClick={scrollToProjects} className="flex flex-row items-center gap-2 w-full sm:w-auto">
               <span>View My Work</span>
               <ArrowDown className="w-4 h-4 shrink-0" />
             </Button>
-            <Button variant="secondary" size="lg" asChild>
-              <a href="/portfolio/Joe_Resume.html" target="_blank" className="flex flex-row items-center gap-2">
+            <Button variant="secondary" size="lg" asChild className="w-full sm:w-auto">
+              <a href="/Portfolio/Joe_Resume.html" target="_blank" className="flex flex-row items-center justify-center gap-2">
                 <Download className="w-4 h-4 shrink-0" />
                 <span>Download Resume</span>
               </a>
@@ -68,7 +68,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center justify-center gap-4 mb-16"
+            className="flex items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16"
           >
             <a
               href={socialLinks.github}
@@ -101,7 +101,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid grid-cols-3 gap-4 max-w-lg mx-auto"
+            className="grid grid-cols-3 gap-2 sm:gap-4 max-w-lg mx-auto px-2 sm:px-0"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -109,11 +109,11 @@ export function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                className="text-center p-4 rounded-xl bg-white/5 border border-white/10"
+                className="text-center p-2 sm:p-4 rounded-xl bg-white/5 border border-white/10"
               >
-                <stat.icon className="w-5 h-5 text-indigo-400 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">{stat.value}</div>
-                <div className="text-xs text-gray-500">{stat.label}</div>
+                <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-400 mx-auto mb-1 sm:mb-2" />
+                <div className="text-lg sm:text-2xl font-bold text-white">{stat.value}</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 leading-tight">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

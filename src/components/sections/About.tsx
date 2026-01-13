@@ -68,15 +68,15 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-16 sm:py-24 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           title="About Me" 
           subtitle="Full-stack developer specializing in Chrome Extensions, PWAs, and AI integration"
         />
 
-        <AnimatedSection className="max-w-3xl mx-auto mb-16">
-          <div className="space-y-4 text-gray-400 leading-relaxed">
+        <AnimatedSection className="max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="space-y-4 text-gray-400 leading-relaxed text-sm sm:text-base">
             <p>
               I'm a passionate full-stack developer with expertise in building production-ready 
               applications that scale. My work has served <span className="text-indigo-400 font-medium">25,000+ users</span> across 
@@ -96,7 +96,7 @@ export function About() {
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {highlights.map((highlight, index) => (
             <AnimatedSection key={highlight.title} delay={index * 0.1}>
               <Card className="h-full">

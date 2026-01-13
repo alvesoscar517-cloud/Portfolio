@@ -28,10 +28,10 @@ export function SkillBadge({ name, level, icon }: SkillBadgeProps) {
   const IconComponent = icon ? iconMap[icon] : null;
 
   return (
-    <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2 border border-white/10 hover:border-white/20 transition-colors">
-      {IconComponent && <IconComponent className="w-4 h-4 text-indigo-400" />}
-      <span className="text-white text-sm">{name}</span>
-      <Badge className={cn('text-xs', levelColors[level as keyof typeof levelColors] || levelColors.Intermediate)}>
+    <div className="flex items-center gap-1.5 sm:gap-2 bg-white/5 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 border border-white/10 hover:border-white/20 transition-colors">
+      {IconComponent && <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-indigo-400 shrink-0" />}
+      <span className="text-white text-xs sm:text-sm">{name}</span>
+      <Badge className={cn('text-[10px] sm:text-xs px-1.5 sm:px-2', levelColors[level as keyof typeof levelColors] || levelColors.Intermediate)}>
         {level}
       </Badge>
     </div>

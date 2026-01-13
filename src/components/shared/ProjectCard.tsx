@@ -114,7 +114,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-sm"
       onClick={onClose}
     >
       <motion.div
@@ -122,43 +122,43 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.15 }}
-        className="bg-gray-900/95 border border-white/10 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl"
+        className="bg-gray-900/95 border border-white/10 rounded-2xl max-w-2xl w-full max-h-[90vh] sm:max-h-[80vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-6 space-y-5">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
           {/* Header */}
-          <div className="flex items-start justify-between">
-            <div>
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
               <Badge variant="secondary" className="mb-2 text-xs">{project.type}</Badge>
-              <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                <Layers className="w-5 h-5 text-indigo-400" />
-                {project.title}
+              <h2 className="text-lg sm:text-xl font-semibold text-white flex items-center gap-2">
+                <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-400 shrink-0" />
+                <span className="truncate">{project.title}</span>
               </h2>
-              <p className="text-indigo-300/70 text-sm mt-1">{project.tagline}</p>
+              <p className="text-indigo-300/70 text-xs sm:text-sm mt-1">{project.tagline}</p>
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-gray-500 hover:text-white"
+              className="p-1.5 rounded-lg hover:bg-white/10 transition-colors text-gray-500 hover:text-white shrink-0"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
+          <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{project.description}</p>
 
           {/* Metrics with icons */}
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-3 sm:gap-6">
             {project.metrics.map((metric, i) => {
               const icons = [BarChart3, FileCode, Globe];
               const Icon = icons[i % icons.length];
               return (
                 <div key={metric.label} className="flex items-center gap-2">
-                  <div className="p-2 rounded-lg bg-indigo-500/10">
-                    <Icon className="w-4 h-4 text-indigo-400" />
+                  <div className="p-1.5 sm:p-2 rounded-lg bg-indigo-500/10">
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-indigo-400" />
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-white">{metric.value}</div>
-                    <div className="text-xs text-gray-500">{metric.label}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white">{metric.value}</div>
+                    <div className="text-[10px] sm:text-xs text-gray-500">{metric.label}</div>
                   </div>
                 </div>
               );
@@ -167,16 +167,16 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           {/* Features with icons */}
           <div>
-            <h3 className="text-sm font-medium text-gray-300 mb-3 flex items-center gap-2">
-              <Zap className="w-4 h-4 text-amber-400" />
+            <h3 className="text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3 flex items-center gap-2">
+              <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
               Key Features
             </h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
               {project.features.map((feature, i) => {
                 const Icon = featureIcons[i % featureIcons.length];
                 return (
-                  <div key={feature} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 rounded-lg px-3 py-2">
-                    <Icon className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <div key={feature} className="flex items-center gap-2 text-xs sm:text-sm text-gray-300 bg-white/5 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2">
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 shrink-0" />
                     <span className="truncate">{feature}</span>
                   </div>
                 );
@@ -186,17 +186,17 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           {/* Architecture with icons */}
           <div>
-            <h3 className="text-sm font-medium text-gray-300 mb-3 flex items-center gap-2">
-              <Cpu className="w-4 h-4 text-purple-400" />
+            <h3 className="text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3 flex items-center gap-2">
+              <Cpu className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-400" />
               Architecture
             </h3>
-            <div className="space-y-2">
+            <div className="space-y-1.5 sm:space-y-2">
               {project.architectureHighlights.map((highlight, i) => {
                 const Icon = archIcons[i % archIcons.length];
                 return (
-                  <div key={highlight} className="flex items-center gap-2 text-sm text-gray-400">
-                    <Icon className="w-4 h-4 text-indigo-400 shrink-0" />
-                    {highlight}
+                  <div key={highlight} className="flex items-start gap-2 text-xs sm:text-sm text-gray-400">
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-indigo-400 shrink-0 mt-0.5" />
+                    <span>{highlight}</span>
                   </div>
                 );
               })}
@@ -205,26 +205,26 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           {/* Tech Stack with icon */}
           <div>
-            <h3 className="text-sm font-medium text-gray-300 mb-3 flex items-center gap-2">
-              <Code2 className="w-4 h-4 text-cyan-400" />
+            <h3 className="text-xs sm:text-sm font-medium text-gray-300 mb-2 sm:mb-3 flex items-center gap-2">
+              <Code2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400" />
               Tech Stack
             </h3>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1 sm:gap-1.5">
               {project.techStack.map((tech) => (
-                <Badge key={tech} variant="outline" className="text-xs">{tech}</Badge>
+                <Badge key={tech} variant="outline" className="text-[10px] sm:text-xs">{tech}</Badge>
               ))}
             </div>
           </div>
 
           {/* Links with icons */}
-          <div className="flex flex-wrap gap-2 pt-2">
+          <div className="flex flex-wrap gap-2 pt-1 sm:pt-2">
             {project.links.map((link) => {
               const isChrome = link.icon === 'Chrome' || link.label.toLowerCase().includes('chrome');
               const LinkIcon = isChrome ? Chrome : ExternalLink;
               return (
-                <Button key={link.label} variant={isChrome ? 'secondary' : 'primary'} size="sm" asChild>
-                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex flex-row items-center gap-2">
-                    <LinkIcon className="w-3.5 h-3.5 shrink-0" />
+                <Button key={link.label} variant={isChrome ? 'secondary' : 'primary'} size="sm" asChild className="text-xs sm:text-sm">
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex flex-row items-center gap-1.5 sm:gap-2">
+                    <LinkIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                     <span>{link.label}</span>
                   </a>
                 </Button>
