@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export function useScrollSpy(sectionIds: string[], offset = 100) {
   const [activeSection, setActiveSection] = useState<string>('');
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number | undefined>(undefined);
   const ticking = useRef(false);
 
   useEffect(() => {
