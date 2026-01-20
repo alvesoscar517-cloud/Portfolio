@@ -8,6 +8,10 @@ const highlights = [
     icon: Monitor,
     title: 'Frontend Excellence',
     color: 'from-blue-500 to-cyan-500',
+    iconBg: 'from-blue-500/20 to-cyan-500/20',
+    iconColor: 'text-blue-400',
+    titleColor: 'text-blue-300',
+    bulletColor: 'text-blue-400',
     skills: [
       'React 18/19, TypeScript, Next.js',
       'State: Zustand, TanStack Query',
@@ -19,6 +23,10 @@ const highlights = [
     icon: Server,
     title: 'Backend & Infrastructure',
     color: 'from-emerald-500 to-teal-500',
+    iconBg: 'from-emerald-500/20 to-teal-500/20',
+    iconColor: 'text-emerald-400',
+    titleColor: 'text-emerald-300',
+    bulletColor: 'text-emerald-400',
     skills: [
       'Node.js, Express, REST APIs',
       'Firebase, Firestore, Cloud Run',
@@ -30,6 +38,10 @@ const highlights = [
     icon: Chrome,
     title: 'Chrome Extension Expert',
     color: 'from-violet-500 to-purple-500',
+    iconBg: 'from-violet-500/20 to-purple-500/20',
+    iconColor: 'text-violet-400',
+    titleColor: 'text-violet-300',
+    bulletColor: 'text-violet-400',
     skills: [
       'Manifest V3 Architecture',
       'Service Workers, Content Scripts',
@@ -41,6 +53,10 @@ const highlights = [
     icon: Wifi,
     title: 'Real-time & Offline',
     color: 'from-amber-500 to-orange-500',
+    iconBg: 'from-amber-500/20 to-orange-500/20',
+    iconColor: 'text-amber-400',
+    titleColor: 'text-amber-300',
+    bulletColor: 'text-amber-400',
     skills: [
       'WebRTC P2P Connections',
       'Yjs CRDT Collaboration',
@@ -52,6 +68,10 @@ const highlights = [
     icon: Brain,
     title: 'AI Integration',
     color: 'from-pink-500 to-rose-500',
+    iconBg: 'from-pink-500/20 to-rose-500/20',
+    iconColor: 'text-pink-400',
+    titleColor: 'text-pink-300',
+    bulletColor: 'text-pink-400',
     skills: [
       'Google Vertex AI & Gemini',
       'AI Content Detection',
@@ -63,6 +83,10 @@ const highlights = [
     icon: Sparkles,
     title: 'Specialized Skills',
     color: 'from-indigo-500 to-blue-500',
+    iconBg: 'from-indigo-500/20 to-blue-500/20',
+    iconColor: 'text-indigo-400',
+    titleColor: 'text-indigo-300',
+    bulletColor: 'text-indigo-400',
     skills: [
       'i18n/l10n (19+ languages)',
       'Payment Integration (LemonSqueezy)',
@@ -142,16 +166,16 @@ export function About() {
 
                 {/* Content */}
                 <CardHeader className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center mb-4">
-                    <highlight.icon className="w-6 h-6 text-indigo-400" />
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${highlight.iconBg} flex items-center justify-center mb-4`}>
+                    <highlight.icon className={`w-6 h-6 ${highlight.iconColor}`} />
                   </div>
-                  <CardTitle>{highlight.title}</CardTitle>
+                  <CardTitle className={highlight.titleColor}>{highlight.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="relative z-10">
                   <ul className="space-y-2">
                     {highlight.skills.map((skill) => (
                       <li key={skill} className="text-gray-400 text-sm flex items-start gap-2">
-                        <span className="text-indigo-400 mt-1">•</span>
+                        <span className={`${highlight.bulletColor} mt-1`}>•</span>
                         {skill}
                       </li>
                     ))}
