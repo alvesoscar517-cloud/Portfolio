@@ -159,8 +159,7 @@ export const projects: Project[] = [
       { label: 'Profit Margin', value: '90%+' }
     ],
     links: [
-      { label: 'Chrome Extension', url: '#', icon: 'Chrome' },
-      { label: 'Documentation', url: '#', icon: 'FileText' }
+      { label: 'Chrome Extension', url: 'https://chromewebstore.google.com/detail/khkpgeanppbdibciaocedfagplmhhpop', icon: 'Chrome' }
     ],
     iconImage: 'icons/SmartScraper.png',
     screenshots: [
