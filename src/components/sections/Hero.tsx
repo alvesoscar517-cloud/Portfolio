@@ -11,8 +11,8 @@ export function Hero() {
 
   const stats = [
     { icon: Users, value: '25K+', label: 'Users Served' },
-    { icon: Code2, value: '100K+', label: 'Lines of Code' },
-    { icon: Chrome, value: '8+', label: 'Chrome Extensions' },
+    { icon: Code2, value: '115K+', label: 'Lines of Code' },
+    { icon: Chrome, value: '9+', label: 'Chrome Extensions' },
   ];
 
   return (

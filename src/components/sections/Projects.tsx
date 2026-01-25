@@ -30,7 +30,7 @@ export function Projects() {
                 <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xl sm:text-2xl font-bold text-white">100,000+</div>
+                <div className="text-xl sm:text-2xl font-bold text-white">115,000+</div>
                 <div className="text-xs sm:text-sm text-gray-500">Lines of Code</div>
               </div>
             </div>
@@ -39,7 +39,7 @@ export function Projects() {
                 <Chrome className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xl sm:text-2xl font-bold text-white">8+</div>
+                <div className="text-xl sm:text-2xl font-bold text-white">9+</div>
                 <div className="text-xs sm:text-sm text-gray-500">Chrome Extensions</div>
               </div>
             </div>

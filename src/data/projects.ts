@@ -130,6 +130,48 @@ export const projects: Project[] = [
     ],
     gradientFrom: 'from-cyan-500/30',
     gradientTo: 'to-blue-600/20'
+  },
+  {
+    id: 'ai-scraper',
+    title: 'AI Scraper',
+    type: 'Chrome Extension + Cloud API',
+    tagline: 'Smart web data extractor powered by Gemini AI',
+    description: 'An intelligent Chrome extension that leverages Google\'s Gemini AI to extract structured data from any website without coding. Features AI-powered field detection, project-based workflow, cloud sync, and multiple export formats for e-commerce, research, and lead generation.',
+    features: [
+      'Zero-Code Data Extraction', 'AI Field Detection (Gemini 2.5)', 'Project-Based Workflow',
+      'Cloud Storage Sync', 'Multiple Export Formats (CSV/JSON/Excel)', 'Credit-Based System',
+      'Offline-First Architecture', 'Real-time Credit Tracking'
+    ],
+    techStack: [
+      'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Shadcn UI',
+      'Zustand', 'Framer Motion', 'Node.js', 'Express', 'Firestore',
+      'Vertex AI (Gemini 2.5 Flash)', 'Cloud Run', 'Docker', 'Lemon Squeezy'
+    ],
+    architectureHighlights: [
+      'Serverless architecture on Cloud Run', 'AI prompt engineering for accuracy',
+      'Credit-based rate limiting', 'Markdown-based content processing',
+      'IndexedDB for local storage', 'Automatic retry with exponential backoff'
+    ],
+    metrics: [
+      { label: 'Lines of Code', value: '15,000+' },
+      { label: 'React Components', value: '50+' },
+      { label: 'AI Accuracy', value: '90-98%' },
+      { label: 'Profit Margin', value: '90%+' }
+    ],
+    links: [
+      { label: 'Chrome Extension', url: '#', icon: 'Chrome' },
+      { label: 'Documentation', url: '#', icon: 'FileText' }
+    ],
+    iconImage: 'icons/SmartScraper.png',
+    screenshots: [
+      'AI-Scraper image/1.png',
+      'AI-Scraper image/2.png',
+      'AI-Scraper image/3.png',
+      'AI-Scraper image/4.png',
+      'AI-Scraper image/5.png'
+    ],
+    gradientFrom: 'from-orange-500/30',
+    gradientTo: 'to-amber-600/20'
   }
 ];
 
